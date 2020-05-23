@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		    <!-- Required meta tags -->
+   		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Monoton|Roboto" rel="stylesheet"> 
+        <link rel="stylesheet" type="text/css" href="style/styles.css">
+        <script src="https://use.fontawesome.com/a9e4c1d741.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+		<title>CinemaStat - Rishin Rahim</title>
+		
+		
+	</head>
+
+	<body>
+			
+
+			<section class="container-fluid gradient-color h-100">
+				
+				<div class="nav">
+				  <div data-aos="fade-in" data-aos-delay="2600" data-aos-duration="1600" class="aos-init aos-animate">
+				<a class="info-button"><a href="https://rishinrahim.github.io/" style="color: white">© Rishin Rahim</a>
+				</div>
+				</div>
+				
+
+				<div class="container-fluid" style="padding-top: 2%;padding-bottom: 4%" > 
+			       <h1 class="titlefont">CinemaStat</h1><sup>A Data Visualization Project with Malayalam Movie Data</sup></div>
+				
+
+
+				<div class="table-responsive">
+			    <canvas id="myChart" style="min-height:450px"></canvas>
+                <script>
+                var ctx = document.getElementById('myChart').getContext('2d');
+          
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {"labels":[1928, 1933, 1938, 1940, 1941, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
+                            "datasets":[{backgroundColor: "#0d062b","data":[1, 1, 1, 1, 1, 1, 1, 6, 8, 12, 7, 8, 7, 5, 7, 4, 4, 5, 11, 15, 13, 20, 30, 30, 41, 34, 33, 40, 52, 53, 63, 52, 72, 73, 98, 141, 135, 99, 115, 130, 124, 121, 151, 145, 100, 111, 116, 130, 117, 111, 89, 92, 92, 81, 107, 71, 75, 90, 127, 112, 81, 75, 74, 86, 79, 87, 118, 118, 121, 185, 211, 193, 181, 183, 229, 264, 297, 123],
+                            "lineTension":0.1}]},
+                    options:{ responsive: true,
+           				 maintainAspectRatio: false,
+                    		legend: {display: false},
+							  scales: {yAxes: [{display: false}],
+
+							  	xAxes: [{
+							                ticks: {
+							                    fontColor: "#332d2d",
+							                    fontSize: 9,
+							                    stepSize: 1,
+							                    beginAtZero: true,
+							                    
+							                },
+							                scaleLabel: {
+										        display: true,
+										        labelString: 'Year',
+										        fontColor: "#ffffff"
+										      }
+							            }]
+							        }
+							   }
+							 
+							 
+                });
+
+                </script>
+            </div>
+				<div class="main-stats aos-init aos-animate" data-aos="fade-up" data-aos-delay="1200" data-aos-duration="2000">
+				<div class="main-stats-inner">
+				<div class="centered ">
+					<div class="infographic-total-stat">
+					<div class="stat-number digit">
+					1928				</div>
+					<div class="stat-caption">First release year</div>
+					
+
+					</div>
+					<div class="infographic-total-stat">
+					<div class="stat-number digit">
+					6297				</div>
+					<div class="stat-caption">Total Movies</div>
+					
+
+					</div>
+					
+				
+				</div>
+				</div>
+
+				</div>
+
+
+			</section>
+	  
+	  		<section id="box2" class="container h-100 aos-init aos-animate" data-aos="fade-up">
+			   <h2 class="text-center mt-4 mb-3" style="font-size: 2em;"><b>Directors </b>Top 50 by frequency</h2>
+			   	<div class="table-responsive">
+			    <canvas id="myChart2" style="min-height:600px"></canvas>
+                <script>
+
+               var ctx = document.getElementById('myChart2').getContext('2d');
+var width = window.innerWidth || document.body.clientWidth;
+
+				var gradientStroke = ctx.createLinearGradient(0, 0, width, 0);
+				gradientStroke.addColorStop(0, "#FDC830");
+				gradientStroke.addColorStop(1, "#F37335");
+			   // Bar chart
+				new Chart(ctx, {
+				    type: 'horizontalBar',
+				    data: {
+				      labels: ['Sasikumar', 'IV Sasi', 'Joshiy', 'M Krishnan Nair', 'PG Vishwambharan', 'Sathyan Anthikkad', 'KS Sethumadhavan', 'P Chandrakumar', 'Hariharan', 'AB Raj', 'Sibi Malayil', 'P Bhaskaran', 'Kamal', 'KS Gopalakrishnan', 'Priyadarshan', 'Shaji Kailas', 'M Kunchacko', 'P Subramaniam', 'Rajasenan', 'Bharathan', 'Jayaraj', 'Balachandra Menon', 'Vinayan', 'Thulasidas', 'Cross Belt Mani', 'N Sankaran Nair', 'Jeasy', 'Baby', 'Viji Thampy', 'Sreekumaran Thampi', 'K Madhu', 'A Vincent', 'Lal Jose', 'Nissar', 'P Anil, Babu Narayanan', 'VK Prakash', 'Mohan', 'Sajan', 'KG George', 'P Venu', 'TS Suresh Babu', 'Fazil', 'KG Rajasekharan', 'PN Menon', 'Ranjith', 'P Padmarajan', 'VM Vinu', 'NP Suresh', 'TK Rajeev Kumar', 'Haridas Kesavan'],
+				      datasets:[{ backgroundColor : gradientStroke,
+				
+				          data: [127, 101, 77, 67, 60, 57, 56, 53, 50, 49, 46, 46, 46, 43, 41, 41, 40, 39, 39, 38, 38, 36, 35, 35, 34, 33, 33, 33, 29, 28, 27, 27, 24, 24, 23, 23, 22, 22, 21, 21, 20, 20, 20, 19, 19, 18, 18, 17, 17, 17]
+
+				        }
+				      ]
+				    },
+				    options: {responsive: true,
+           				 maintainAspectRatio: false,
+				    		plugins: {
+				    			legend: false,
+							    tooltip: true,
+							    layout: {
+							       padding: 24
+							    },
+											          
+						
+			            	}
+						      
+		                  
+                    	}
+                    
+				    
+
+				    
+				});
+
+			   </script>
+			</div>
+
+
+			</section>
+
+			<section id="box3" class="container-fluid h-100 bg-cool-grey-01 aos-init aos-animate" data-aos="fade-up">
+			    <h2 class="text-center mb-3" style="font-size: 2em;padding-top:1em"><b>Producers </b>Top 50 by frequency</h2>
+			   	<div class="table-responsive">
+			    <canvas id="myChart3" style="min-height:600px"></canvas>
+                <script>
+
+               var ctx = document.getElementById('myChart3').getContext('2d');
+var width = window.innerWidth || document.body.clientWidth;
+
+				var gradientStroke = ctx.createLinearGradient(0, 0, width, 0);
+				gradientStroke.addColorStop(0, "#00B4DB");
+				gradientStroke.addColorStop(1, "#0083B0");
+			   // Bar chart
+				new Chart(ctx, {
+				    type: 'horizontalBar',
+				    data: {
+				      labels: ['P Subramaniam', 'M Mani', 'M Kunchacko', 'TE Vasudevan', 'Thiruppathi Chettiyar', 'MO Joseph', 'GP Vijayakumar', 'Antony Perumbavoor', 'Raju Mathew', 'PV Gangadharan', 'KP Kottarakkara', 'Milan Jaleel', 'Anto Joseph', 'S Kumar', 'Sreekumaran Thampi', 'Hari Pothan', 'Siyad Kocker', 'TK Balachandran', 'Purushan Alappuzha', 'Joy Thomas', 'PKR Pillai', 'EK Thyagarajan', 'Raveendranathan Nair', 'RS Prabhu', 'Thampi Kannanthanam', 'PA Thomas', 'Madhu', 'Sajan', 'A Raghunath', 'NG John', 'Gokulam Gopalan', 'Appachan (Navodaya)', 'KSR Moorthy', 'GP Balan', 'Menaka Sureshkumar', 'R Mohan', 'MP Ramachandran', 'VBK Menon', 'N Krishnakumar (Kireedam Unni)', 'Lal', 'Areefa Hassan', 'KJ Joseph', 'Maniyanpilla Raju', 'TK Pareekutty', 'Prem Prakash', 'Santhosh Damodaran', 'Pavamani', 'M Ranjith', 'AV Anoop', 'PT Xavier'],
+				      datasets:[{ backgroundColor : gradientStroke,
+				
+				          data: [54, 48, 48, 40, 27, 26, 26, 24, 23, 22, 21, 20, 19, 19, 18, 18, 18, 17, 17, 16, 15, 15, 14, 14, 14, 14, 13, 13, 13, 12, 12, 12, 11, 11, 11, 11, 11, 11, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 8, 8]
+
+				        }
+				      ]
+				    },
+				    options: {responsive: true,
+           				 maintainAspectRatio: false,
+				    		plugins: {
+				    			legend: false,
+							    tooltip: true,
+							    layout: {
+							       padding: 24
+							    },
+											          
+						
+			            	}
+						      
+		                  
+                    	}
+                    
+				    
+
+				    
+				});
+
+			   </script>
+			</div>
+
+
+
+			</section>
+
+
+			<section id="box4" class="container h-100  aos-init aos-animate" data-aos="fade-up">
+			    <h2 class="text-center mb-3" style="font-size: 2em;padding-top:1em"><b>Banners </b>Top 50 by frequency</h2>
+			   	<div class="table-responsive">
+			    <canvas id="myChart4" style="min-height:600px"></canvas>
+                <script>
+
+               var ctx = document.getElementById('myChart4').getContext('2d');
+var width = window.innerWidth || document.body.clientWidth;
+
+				var gradientStroke = ctx.createLinearGradient(0, 0, width, 0);
+				gradientStroke.addColorStop(0, "#DA4453");
+				gradientStroke.addColorStop(1, "#89216B");
+			   // Bar chart
+				new Chart(ctx, {
+				    type: 'horizontalBar',
+				    data: {
+				      labels: ['Neela Productions', 'Sunitha Productions', 'Excel Productions', 'Jaya Maruthi', 'Udaya', 'Manjilas', 'Supriya', 'Century Films', 'Grihalakshmi Productions', 'Seven Arts International LTD', 'Ganesh Pictures', 'Sastha Productions', 'Galaxy Films', 'Jubilee Productions', 'Evershine Productions', 'Evershine', 'Revathi Kalamandir', 'Sree Murugalaya Films', 'Kokers Films', 'SreeGokulam Movies', 'General Pictures', 'Shirdi Sai Creations', 'Ashirvad Cinemas', 'Teakebees', 'Navodaya', 'MS Productions', 'Aashirvad Productions', 'Saj Productions', 'Sanjay Productions', 'Bhavani Rajeswari', 'Geo Movies', 'Kripa Films', 'Arifa Enterprises', 'August Cinema', 'Anto Joseph Film Company', 'Simple Productions', 'Uma Arts', 'Lal Creations', 'Thomas Pictures', 'Sree Sai Productions', 'Seven Arts', 'Cherupushpam Films', 'Pranavam Arts International', 'Chandrathara Productions', 'Sree Rajesh Films', 'Friday Films', 'Sooryodaya Creations', 'Murali Movies', 'Priyadarsini Movies', 'AVA Productions'],
+				      datasets:[{ backgroundColor : gradientStroke,
+				
+				          data: [58, 48, 36, 28, 25, 24, 20, 20, 19, 18, 18, 18, 17, 16, 16, 16, 16, 15, 15, 14, 14, 13, 13, 13, 13, 12, 12, 12, 12, 11, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 8, 8]
+
+				        }
+				      ]
+				    },
+				    options: {responsive: true,
+           				 maintainAspectRatio: false,
+				    		plugins: {
+				    			legend: false,
+							    tooltip: true,
+							    layout: {
+							       padding: 24
+							    },
+											          
+						
+			            	}
+						      
+		                  
+                    	}
+                    
+				    
+
+				    
+				});
+
+			   </script>
+			</div>
+
+
+
+			</section>
+
+			<footer><div class="content"><h4>Data and Methodology</h4><p>This research is mostly based on the data set web-scrapped from  two sources.  First one - <a href="https://www.malayalachalachithram.com/">MalayalaChalachithram.com<a>, an internet cooperative for sharing comprehensive details of Malayalam Movies, Movie Songs and Movie Artists.Second one  - <a href="https://en.wikipedia.org/wiki/List_of_Malayalam_films_of_1960">Wikipedia Malayalam movie Datasets</a>, the free encyclopedia owned and distributed by wikipedia.org. All data, related to early years was ignored for both datasets.</p><p>"Baby Names from Social Security Card Applications" dataset originally presented all information about naming in the US in already aggregated form by years and gender and it didn't require any advanced data preprocessing.</p><p>On the other hand, I was fully responsible for gathering similar data for movies &amp; TV series using overall information about films &amp; additional data about their main and secondary characters. During this process I've excluded not only the picture that are too old, but also all documentary movies and TV shows, which have their own naming rules that are based on an actual names of the heroes and not on the whims of the screenwriter and could distort the final results of the research. The final movie list contains 389.187 films, short movies and TV series.</p><p>All together these cinemtic units allowed me to gather information about names, used by almost a million cinema characters. I've used a set of text mining algorithms to extract actual first names of heroes and distinguish them from last names, nicknames, official titles &amp; ranks. You just can't imagine how many characters were called "Guy" or "That Old Lady" during the past 70 years!</p><p>To make the frequency statistic for the cinema world more accurate, from the list of characters were removed duplicates that were mentioned in different movies and/or TV series, but actually are references to the same character such as Captain James Kirk, Princess Leia or Mr James Bond.</p><p>Gender was determined based on gender of a person who used to play the character. I assumed that it's not the most accurate way to determine this parameter and, unfortunately, it forced me to be focused on "female" and "male" categories only. However, this assumption shouldn't significantly affect the final conclusions as soon as they explored the most common situations.</p><p>All source code and resulting datasets, used for this article are availabe on <a href="https://github.com/rishinrahim/cinemasta" target="_blank" rel="noopener noreferrer">GitHub</a></p></div>
+			<div class="container text-center">Rishin Rahim</div>
+			</footer>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  </body>
+</html>
+
