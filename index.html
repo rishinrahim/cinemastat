@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Cinemastat: A data Visualization Experiment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto" rel="stylesheet"> 
+  <!-- <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet"> -->
+  
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/timeline.css">
+  
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-6 col-xl-2">
+            <div class="mb-0 site-logo"><a href="index.html" class="mb-0" style = "font-family: 'Monoton', 'Roboto', sans-serif;">Cinemastat<span style="color:#00d09c">.</span> </a></div>
+          </div>
+
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="#home-section" class="nav-link">Movies</a></li>
+				        <li><a href="#pricing-section" class="nav-link">Top50</a></li>
+                <li><a href="#blog-section" class="nav-link">Actvity</a></li>
+                <li><a href="#contact-section" class="nav-link">Collaborations</a></li>
+                <!-- <li class="has-children">
+                  <a href="#features-section" class="nav-link">More</a>
+                  <ul class="dropdown">
+                    <li><a href="#" class="nav-link">Editing</a></li>
+                    <li><a href="#" class="nav-link">Music</a></li>
+                    <li><a href="#" class="nav-link">Cinematagraphy</a></li>
+                    <li><a href="#" class="nav-link">Story/Screenplay</a></li>
+                    <li><a href="#" class="nav-link">Art direction</a></li>
+                    <li><a href="#" class="nav-link">Designs</a></li>
+                     </ul>
+                </li> -->
+                <li><a href="#contact-section" class="nav-link">About</a></li>
+
+                
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3 text-black"></span></a></div>
+
+        </div>
+      </div>
+
+    </header>
+
+
+
+    <div class="site-section hero" id="home-section">
+      <div class="container text-center">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-10">
+            <div class="mb-5">
+              <h1 class="hero-heading">A <strong>Data Visualization Experiment</strong> with <span style="color:#00d09c">Malayalam </span> Movie Data</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+    <div class="site-section pt-0" id="features-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <span class="subtitle-1">Movies</span>
+            <h2 class="section-title-1 font-weight-bold">From 1928 - Present </h2>
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <!-- <div class="col-lg-6 mb-5 order-lg-2 mb-lg-0" data-aos="fade-right"> -->
+            <div class="table-responsive" style="overflow:hidden;">
+              <canvas id="myChart" style="min-height:  400px;" ></canvas>
+            </div>
+        </div>
+
+        <div class="row">
+          
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-v2">
+              <h1>6384</h1>
+              <h3>Total Movies</h3>
+              <p> </p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-v2">
+              <h1>5212</h1>
+              <h3>Released Movies</h3>
+              <p> </p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-v2">
+              <h1>487</h1>
+                <h3>Unreleased Movies</h3>
+                <p> </p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="0">
+            <div class="feature-v2">
+              <h1>309</h1>
+                <h3>Dubbed Movies</h3>
+                
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+        
+    <!-- <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 text-center mb-5 mx-auto">
+            <span class="subtitle-1">Movie Milestones</span>
+          </div>
+        </div>
+
+        <div class="row">
+            <ul class="timeline timeline-centered">
+              <li class="timeline-item">
+                  <div class="timeline-info"><span>1928</span></div>
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                      <h4 class="timeline-title">Vigathakumaran</h3>
+                      <p>First film made in Malayalam</p>
+                  </div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-info"><span>1938</span></div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h4 class="timeline-title">Balan</h3>
+                    <p>first sound film in Malayalam</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-info"><span>1948</span></div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h4 class="timeline-title">Nirmala</h3>
+                    <p>First malayalam film to have songs</p>
+                </div>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-info"><span>1951</span></div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">Jeevitha Nouka</h3>
+                  <p>First super hit Malayalam film with a theatrical run of 284 days</p>
+                </div>
+              </li>
+              
+              <li class="timeline-item">
+                <div class="timeline-info"><span>1954</span></div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">neelakkuyil</h3>
+                  <p>First Malayalam movie to win the national award (Silver lotus)</p>
+                </div>
+              </li>
+              
+              <li class="timeline-item">
+                <div class="timeline-info"><span>1955</span></div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">Newspaper boy</h3>
+                  <p>First neorealistic film</p>
+                </div>
+              </li>
+              
+              <li class="timeline-item">
+                <div class="timeline-info"><span>1961</span></div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">kandam bacha coat</h3>
+                  <p>First Color film</p>
+                </div>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-info"><span>1965</span></div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">Chemmeen</h3>
+                  <p>First malayalam and south indian movie to win the national award for best film</p>
+                </div>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-info"><span>1978</span></div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">Thacholi Ambu</h3>
+                  <p>First Cinemascope film</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-info"><span>1984</span></div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">My Dear Kuttichathan</h3>
+                  <p>first 3d film in india</p>
+                </div>
+              </li>
+
+          </ul>
+  
+        </div>
+      </div>
+    </div> -->
+
+
+    <!-- <div class="site-section bg-light testimonial-wrap" id="testimonials-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <span class="subtitle-1">Testimonials</span>
+            <h2 class="section-title-1 font-weight-bold">What People Says</h2>
+          </div>
+        </div>
+      </div>
+      <div class="slide-one-item home-slider owl-carousel">
+        <div>
+          <div class="testimonial">
+
+            <blockquote class="mb-5">
+              <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+            </blockquote>
+
+            <figure class="mb-4 d-flex align-items-center justify-content-center">
+              <div><img src="images/person_3.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+              <p>John Smith</p>
+            </figure>
+          </div>
+        </div>
+        <div>
+          <div class="testimonial">
+
+            <blockquote class="mb-5">
+              <p>&ldquo;A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.&rdquo;</p>
+            </blockquote>
+            <figure class="mb-4 d-flex align-items-center justify-content-center">
+              <div><img src="images/person_2.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+              <p>Christine Aguilar</p>
+            </figure>
+
+          </div>
+        </div>
+
+        <div>
+          <div class="testimonial">
+
+            <blockquote class="mb-5">
+              <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>
+            </blockquote>
+            <figure class="mb-4 d-flex align-items-center justify-content-center">
+              <div><img src="images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+              <p>Robert Spears</p>
+            </figure>
+
+
+          </div>
+        </div>
+
+        <div>
+          <div class="testimonial">
+
+            <blockquote class="mb-5">
+              <p>&ldquo;The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.&rdquo;</p>
+            </blockquote>
+            <figure class="mb-4 d-flex align-items-center justify-content-center">
+              <div><img src="images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+              <p>Bruce Rogers</p>
+            </figure>
+
+          </div>
+        </div>
+
+      </div>
+    </div> -->
+
+    <div class="site-section" id="pricing-section">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-7 text-center mb-5">
+            <span class="subtitle-1">Top Movies - Box office collection</span>
+            <h4 style="margin-top:2em;font-size:12px;font-weight:400;">
+          <span class="step" style="">1</span> Mammootty              <span class="step" style="
+                  background: #c4eff5;color: #c4eff5;
+                  margin-left: 10px;
+              ">1</span> Mohanlal</h4>
+          </div>
+        </div>
+        <div class="row" style="font-weight: 500;" >
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 pricing">
+            <div class="border p-5 text-center rounded">
+              <h3>1980s</h3>
+              <!-- <div class="price mb-3"><sup class="currency">$</sup><span class="number">30</span> <span class="per">/year</span></div> -->
+              <p class="text-muted mb-4"></p>
+              <ul class="list-unstyled text-center success mb-5">
+                <li class ="mammootty"> <span class="year">1989</span> Oru Vadakan Veeragaatha</li>
+                <li class = "mohanlal"> <span class="year">1988</span> Chitram</li>
+                <li class ="mammootty"> <span class="year">1987</span> New Delhi</li>
+                <li class ="mammootty"><span class="year">1986</span> Aavanaazhi</li>
+                <li class = "mohanlal"> <span class="year">1985</span> Nokethadoorathu Kannum Nattu</li>
+                <li> <span class="year">1984</span> My Dear Kuttichaathan</li>
+                <li class ="mammootty"> <span class="year">1983</span> Aa Ratri</li>
+                <li class ="mammootty"><span class="year">1982</span> Ee Naadu </li>
+                <li> <span class="year">1981</span> Kolilakkam</li>
+                <li> <span class="year">1980</span> Angaadi</li>
+
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 pricing">
+            <div class="border p-5 text-center rounded">
+              <h3>1990s</h3>
+              <!-- <div class="price mb-3"><sup class="currency">$</sup><span class="number">30</span> <span class="per">/year</span></div> -->
+              <p class="text-muted mb-4"></p>
+              <ul class="list-unstyled text-center success mb-5">
+                
+                
+                
+                <li > <span class="year">1999</span> Pathram</li>
+                <li> <span class="year">1998</span> Harikrishnans</li>
+                <li class = "mohanlal"> <span class="year">1997</span> AaraamThampuran</li>
+                <li class ="mammootty"><span class="year">1996</span> Hitler</li>
+                <li class = "mohanlal"> <span class="year">1995</span> Sphadikam</li>
+                <li class = "mohanlal"> <span class="year">1994</span> Thenmavin Kombathu</li>
+                <li class = "mohanlal"> <span class="year">1993</span> Manichithrathaazhu</li>
+                <li class ="mammootty"><span class="year">1992</span> Pappayude Swantham Appoos </li>
+                <li class = "mohanlal"> <span class="year">1991</span> Kilukkam</li>
+                <li class = "mohanlal"> <span class="year">1990</span> His Highness Abdulla</li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 pricing">
+            <div class="border p-5 text-center rounded">
+              <h3>2000s</h3>
+              <!-- <div class="price mb-3"><sup class="currency">$</sup><span class="number">30</span> <span class="per">/year</span></div> -->
+              <p class="text-muted mb-4"></p>
+                           
+              <ul class="list-unstyled text-center success mb-5">
+                <li class ="mammootty"> <span class="year">2009</span> Kerala Verma Pazhassi Raja</li>
+                <li > <span class="year">2008</span> Twenty:20</li>
+                <li class ="mammootty"> <span class="year">2007</span> Mayavi</li>
+                <li><span class="year">2006</span> Classmates</li>
+                <li class ="mammootty"> <span class="year">2005</span> Rajamanikyam</li>
+                <li class ="mammootty"> <span class="year">2004</span> Sethuramiyer CBI</li>
+                <li class = "mohanlal"> <span class="year">2003</span> Balettan</li>
+                <li><span class="year"> 2002</span> Meesa Madhavan </li>
+                <li class = "mohanlal" > <span class="year">2001</span> Ravanaprabhu</li>
+                <li class = "mohanlal"> <span class="year">2000</span> Narasimham</li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 pricing" style="margin-top: 1rem;">
+            <div class="border p-5 text-center rounded">
+              <h3>2010s</h3>
+              <!-- <div class="price mb-3"><sup class="currency">$</sup><span class="number">30</span> <span class="per">/year</span></div> -->
+              <p class="text-muted mb-4"></p>
+              <ul class="list-unstyled text-center success mb-5">
+                <li class = "mohanlal"> <span class="year"> 2019</span> Lucifer </li>
+                <li > <span class="year"> 2018</span> Kayamkulam Kochunni</li>
+                <li class = "mohanlal"> <span class="year"> 2017</span> Munthirivallikal Thalirkkumbol</li>
+                <li class = "mohanlal"><span class="year"> 2016</span> Pulimurugan</li>
+                <li> <span class="year"> 2015</span> Premam</li>
+                <li> <span class="year"> 2014</span> Bangalore Days</li>
+                <li class = "mohanlal"> <span class="year"> 2013</span> Drishyam</li>
+                <li><span class="year"> 2012</span> Mayamohini </li>
+                <li class = "mohanlal"> <span class="year"> 2011</span> Christian Brothers</li>
+                <li class ="mammootty"> <span class="year"> 2010</span> Pokkiri Raja</li>
+                
+              </ul>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+    </div>   
+
+    <!-- <div class="site-section bg-light" id="blog-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 text-center">
+            <span class="sub-title">Blog</span>
+            <h2 class="font-weight-bold text-black">News &amp; Updates</h2>
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, explicabo, quasi. Magni deserunt sunt labore.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="">
+            <div class="h-entry">
+              <a href="single.html">
+                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+              </a>
+              <h2 class="font-size-regular"><a href="#">Best For Web Startups and Web Apps</a></h2>
+              <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2020<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+              <p><a href="#">Continue Reading...</a></p>
+            </div> 
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="h-entry">
+              <a href="single.html">
+                <img src="images/img_4.jpg" alt="Image" class="img-fluid">
+              </a>
+              <h2 class="font-size-regular"><a href="#">Best For Web Startups and Web Apps</a></h2>
+              <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2020<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+              <p><a href="#">Continue Reading...</a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="h-entry">
+              <a href="single.html">
+                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+              </a>
+              <h2 class="font-size-regular"><a href="#">Best For Web Startups and Web Apps</a></h2>
+              <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2020<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+              <p><a href="#">Continue Reading...</a></p>
+            </div> 
+          </div>
+          
+        </div>
+      </div>
+    </div> -->
+
+
+
+    <!-- <div class="site-section pb-0 bg-light" id="contact-section">
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-md-7 text-center">
+            <span class="sub-title">Contact</span>
+            <h2 class="font-weight-bold text-black">Get In Touch</h2>
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, explicabo, quasi. Magni deserunt sunt labore.</p>
+          </div>
+        </div>
+
+        <div class="row mb-5">
+
+
+
+          <div class="col-md-4 text-center">
+            <p class="mb-4">
+              <span class="icon-room d-block h2 text-primary"></span>
+              <span>203 Fake St. Mountain View, San Francisco, California, USA</span>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <p class="mb-4">
+              <span class="icon-phone d-block h2 text-primary"></span>
+              <a href="#">+1 232 3235 324</a>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <p class="mb-0">
+              <span class="icon-mail_outline d-block h2 text-primary"></span>
+              <a href="#">youremail@domain.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mb-5">
+
+
+
+            <form action="#" class="p-5 bg-white">
+
+              <h2 class="h4 text-black mb-5">Contact Form</h2> 
+
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">First Name</label>
+                  <input type="text" id="fname" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Last Name</label>
+                  <input type="text" id="lname" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label> 
+                  <input type="email" id="email" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" for="subject">Subject</label> 
+                  <input type="subject" id="subject" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="message">Message</label> 
+                  <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                </div>
+              </div>
+
+
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="site-section text-center">
+      <div class="container">
+        <h2 class="text-black mb-3">Join over 1,700 companies that trust us.</h2>
+        <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p><a href="#" class="btn btn-primary">Try it for free</a></p>
+      </div>
+    </div>  -->
+
+    <footer class="site-footer bg-light">
+      <div class="container">
+        <div class="row ">
+                <h2 class="footer-header mb-4">Data and Methodology</h2>
+                <p>This research is mostly based on the data scrapped from following two sources:
+                  <a href="https://www.malayalachalachithram.com/">MalayalaChalachithram.com<a>, 
+                    an internet cooperative for sharing comprehensive details of Malayalam Movies, Movie Songs and Movie Artists.
+                  and <a href="https://en.wikipedia.org/wiki/List_of_Malayalam_films_of_1960">Wikipedia Malayalam movie Datasets</a>, 
+                  the free encyclopedia owned and distributed by wikipedia.org. All data, related to early years was ignored for both datasets.</p>
+          </div>
+        <div class="container footer-icons text-center">   
+           
+                <a href="#" ><span class="icon-twitter"></span></a>
+                <a href="#" ><span class="icon-github"></span></a>
+          </div>
+       
+          <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+              <p class="copyright" ><small>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> Rishin Rahim | This template is made with <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </footer>
+
+    </div> <!-- .site-wrap -->
+
+    <!-- javascript -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+
+    <script src="https://use.fontawesome.com/a9e4c1d741.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/main.js"></script>
+    <script src="charts/chart1.js"></script>
+    <script src="js/timeline.js"></script>
+  </body>
+  </html>
