@@ -1,0 +1,1 @@
+var ctx = document.getElementById('chart1').getContext('2d');var myChart = new Chart(ctx,{"type": "bar", "data": {"labels": ["Data0", "Data1", "Data2", "Data3", "Data4"], "datasets": [{"label": "My Favourite Numbers", "data": [12, 19, 3, 17, 10], "backgroundColor": "rgba(60, 180, 75, 1.0)"}]}, "options": {"plugins": {}}});
