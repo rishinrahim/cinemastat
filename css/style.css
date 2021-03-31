@@ -585,7 +585,7 @@ body:after {
   .hero:before {
     content: ""; }
   .hero .hero-heading {
-    font-size: 50px;
+    font-size: 3rem;
     color: #000;
     color: #000; }
     .hero .hero-heading strong {
